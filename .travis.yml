@@ -10,10 +10,26 @@ matrix:
       script: py.test -rws tests/
     - language: python
       sudo: false
+      python: "2.7"
+      arch: arm64
+      install:
+        - pip install -e .[pythonz] --upgrade
+        #- pip install pytest virtualenv==16.0.0
+      script: py.test -rws tests/
+    - language: python
+      sudo: false
       python: "3.4"
       install:
         - pip install -e . --upgrade
         - pip install pytest
+      script: py.test -rws tests/ --ignore=tests/test_install.py
+    - language: python
+      sudo: false
+      python: "3.4"
+      arch: arm64
+      install:
+        - pip install -e . --upgrade
+        #- pip install pytest virtualenv==16.0.0
       script: py.test -rws tests/ --ignore=tests/test_install.py
     - language: python
       sudo: false
@@ -24,10 +40,26 @@ matrix:
       script: py.test -rws tests/ --ignore=tests/test_install.py
     - language: python
       sudo: false
+      python: "3.5"
+      arch: arm64
+      install:
+        - pip install -e . --upgrade
+        #- pip install pytest virtualenv==16.0.0
+      script: py.test -rws tests/ --ignore=tests/test_install.py
+    - language: python
+      sudo: false
       python: "3.6"
       install:
         - pip install -e .[pythonz] --upgrade
         - pip install pytest
+      script: py.test -rws tests/
+    - language: python
+      sudo: false
+      python: "3.6"
+      arch: arm64
+      install:
+        - pip install -e .[pythonz] --upgrade
+        #- pip install pytest virtualenv==16.0.0
       script: py.test -rws tests/
     - language: python
       dist: xenial
@@ -36,6 +68,15 @@ matrix:
       install:
         - pip install -e . --upgrade
         - pip install pytest
+      script: py.test -rws tests/ --ignore=tests/test_install.py
+    - language: python
+      dist: xenial
+      sudo: required
+      python: "3.7"
+      arch: arm64
+      install:
+        - pip install -e . --upgrade
+        #- pip install pytest virtualenv==16.0.0
       script: py.test -rws tests/ --ignore=tests/test_install.py
     - language: python
       sudo: false
