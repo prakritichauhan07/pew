@@ -14,7 +14,7 @@ matrix:
       arch: arm64
       install:
         - pip install -e .[pythonz] --upgrade
-        #- pip install pytest virtualenv==16.0.0
+        - pip install pytest virtualenv==16.0.0
       script: py.test -rws tests/
     - language: python
       sudo: false
@@ -29,7 +29,7 @@ matrix:
       arch: arm64
       install:
         - pip install -e . --upgrade
-        #- pip install pytest virtualenv==16.0.0
+        - pip install pytest virtualenv==16.0.0
       script: py.test -rws tests/ --ignore=tests/test_install.py
     - language: python
       sudo: false
@@ -44,7 +44,7 @@ matrix:
       arch: arm64
       install:
         - pip install -e . --upgrade
-        #- pip install pytest virtualenv==16.0.0
+        - pip install pytest virtualenv==16.0.0
       script: py.test -rws tests/ --ignore=tests/test_install.py
     - language: python
       sudo: false
@@ -59,7 +59,7 @@ matrix:
       arch: arm64
       install:
         - pip install -e .[pythonz] --upgrade
-        #- pip install pytest virtualenv==16.0.0
+        - pip install pytest virtualenv==16.0.0
       script: py.test -rws tests/
     - language: python
       dist: xenial
@@ -76,7 +76,7 @@ matrix:
       arch: arm64
       install:
         - pip install -e . --upgrade
-        #- pip install pytest virtualenv==16.0.0
+        - pip install pytest virtualenv==16.0.0
       script: py.test -rws tests/ --ignore=tests/test_install.py
     - language: python
       sudo: false
